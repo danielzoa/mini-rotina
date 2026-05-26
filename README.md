@@ -1,6 +1,6 @@
 # Mini Rotina
 
-Mini Rotina e um app infantil de rotina com timers, alarmes, reforco positivo e visual amigavel.
+Mini Rotina e um app infantil de rotina com timers, alarmes, reforço positivo e visual amigavel.
 
 O projeto foi criado para ser simples, leve e facil de manter, sem backend, sem login e sem dependencias desnecessarias.
 
@@ -16,7 +16,7 @@ O projeto foi criado para ser simples, leve e facil de manter, sem backend, sem 
 - Tela inicial com botoes grandes para atividades infantis.
 - Timer com pausa e botao para iniciar.
 - Relogio na tela inicial.
-- Configuracao de horarios por tarefa.
+- Configuração de horarios por tarefa.
 - Alarme que abre a tarefa no horario configurado.
 - Alarme tocando por ate 2 minutos quando uma tarefa agendada dispara.
 - 4 modelos de alarme gerados por codigo, sem arquivos de audio com copyright.
@@ -73,4 +73,4 @@ Abra a pasta raiz do projeto no Android Studio e execute o modulo `app`.
 
 ## Objetivo do produto
 
-Ajudar criancas a seguirem pequenas rotinas com leveza, previsibilidade e reforco positivo, sem transformar rotina infantil em pressao ou competicao.
+Ajudar crianças a seguirem pequenas rotinas com leveza, previsibilidade e reforco positivo, sem transformar rotina infantil em pressao ou competicao.
