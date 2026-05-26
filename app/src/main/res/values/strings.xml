@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Timer Infantil</string>
+    <string name="home_subtitle">Escolha uma atividade para começar.</string>
+    <string name="activity_default">Atividade</string>
+
+    <string name="activity_brush_teeth">🪥 Escovar os dentes</string>
+    <string name="activity_school">🎒 Ir para escola</string>
+    <string name="activity_clean_room">🏠 Arrumar quarto</string>
+    <string name="activity_homework">✏️ Dever de casa</string>
+    <string name="activity_reading">📚 Leitura</string>
+    <string name="activity_sleep">🌙 Dormir</string>
+    <string name="activity_free_play">⭐ Brincadeira livre</string>
+
+    <string name="timer_feedback_start">Respire fundo. Vamos com calma.</string>
+    <string name="feedback_pause">Tudo bem pausar um pouquinho.</string>
+    <string name="feedback_free_play">Espero que tenha se divertido 🌟</string>
+    <string name="feedback_done">Muito bem! Você completou essa atividade 🌟</string>
+    <string name="action_pause">Pausar</string>
+    <string name="action_back_home">Voltar</string>
+</resources>

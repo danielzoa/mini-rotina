@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/background_soft</item>
+        <item name="android:statusBarColor">@color/background_soft</item>
+    </style>
+
+    <style name="ActivityButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">21sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">22dp</item>
+        <item name="android:paddingEnd">22dp</item>
+    </style>
+
+    <style name="PrimaryActionButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:backgroundTint">@color/button_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="SecondaryActionButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">58dp</item>
+        <item name="android:backgroundTint">@color/button_secondary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

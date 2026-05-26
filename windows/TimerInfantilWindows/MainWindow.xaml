@@ -1,0 +1,400 @@
+<Window x:Class="TimerInfantilWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Timer Infantil"
+        Width="500"
+        Height="760"
+        MinWidth="440"
+        MinHeight="660"
+        WindowStartupLocation="CenterScreen"
+        Icon="Assets/MiniRotina.ico"
+        Background="#FFF0F6"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <Style x:Key="RoutineButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="72" />
+            <Setter Property="Margin" Value="0,7" />
+            <Setter Property="Padding" Value="22,0" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Foreground" Value="#352B34" />
+            <Setter Property="FontSize" Value="21" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="18">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="Center"
+                                              Margin="{TemplateBinding Padding}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.88" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ActionButtonStyle" TargetType="Button" BasedOn="{StaticResource RoutineButtonStyle}">
+            <Setter Property="Height" Value="64" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="#F472B6" />
+            <Setter Property="FontSize" Value="22" />
+        </Style>
+
+        <Style x:Key="SecondaryButtonStyle" TargetType="Button" BasedOn="{StaticResource RoutineButtonStyle}">
+            <Setter Property="Height" Value="56" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="#FDE2F0" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+
+        <Style x:Key="ThemeButtonStyle" TargetType="Button" BasedOn="{StaticResource RoutineButtonStyle}">
+            <Setter Property="Width" Value="124" />
+            <Setter Property="Height" Value="44" />
+            <Setter Property="Margin" Value="10,0,0,0" />
+            <Setter Property="Padding" Value="12,0" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+        </Style>
+
+        <Style x:Key="TimeTextBoxStyle" TargetType="TextBox">
+            <Setter Property="Width" Value="72" />
+            <Setter Property="Height" Value="38" />
+            <Setter Property="Margin" Value="8,0,0,0" />
+            <Setter Property="Padding" Value="8,4" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="24">
+        <Grid x:Name="HomePanel">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock x:Name="HomeTitleText"
+                                   Text="Timer Infantil"
+                                   Foreground="#352B34"
+                                   FontSize="34"
+                                   FontWeight="Bold" />
+
+                        <Button x:Name="ThemeButton"
+                                Grid.Column="1"
+                                Style="{StaticResource ThemeButtonStyle}"
+                                Content="Modo azul" />
+                    </Grid>
+
+                    <TextBlock x:Name="HomeSubtitleText"
+                               Text="Escolha uma atividade para come&#x00E7;ar."
+                               Margin="0,8,0,0"
+                               Foreground="#6B5864"
+                               FontSize="20" />
+
+                    <Border x:Name="ClockBadge"
+                            Margin="0,16,0,0"
+                            Padding="16"
+                            Background="White"
+                            BorderBrush="#F9A8D4"
+                            BorderThickness="2"
+                            CornerRadius="18">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel>
+                                <TextBlock x:Name="ClockLabelText"
+                                           Text="Agora"
+                                           Foreground="#6B5864"
+                                           FontSize="16" />
+                                <TextBlock x:Name="ClockText"
+                                           Foreground="#352B34"
+                                           FontSize="30"
+                                           FontWeight="Bold" />
+                            </StackPanel>
+
+                            <Button x:Name="OpenScheduleButton"
+                                    Grid.Column="1"
+                                    Style="{StaticResource ThemeButtonStyle}"
+                                    Width="132"
+                                    Content="Hor&#x00E1;rios" />
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="StarsBadge"
+                            Margin="0,14,0,18"
+                            Padding="14"
+                            Background="White"
+                            BorderBrush="#F9A8D4"
+                            BorderThickness="2"
+                            CornerRadius="18">
+                        <TextBlock x:Name="StarsText"
+                                   Foreground="#352B34"
+                                   FontSize="20"
+                                   FontWeight="SemiBold" />
+                    </Border>
+
+                    <Button x:Name="BrushTeethButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#FBCFE8"
+                            Content="&#x1FAA5; Escovar os dentes" />
+
+                    <Button x:Name="SchoolButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#CDEBFF"
+                            Content="&#x1F392; Ir para escola" />
+
+                    <Button x:Name="CleanRoomButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#FFE4A3"
+                            Content="&#x1F3E0; Arrumar quarto" />
+
+                    <Button x:Name="HomeworkButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#D8C8FF"
+                            Content="&#x270F;&#xFE0F; Dever de casa" />
+
+                    <Button x:Name="ReadingButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#CFF5D2"
+                            Content="&#x1F4DA; Leitura" />
+
+                    <Button x:Name="SleepButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#BFD3FF"
+                            Content="&#x1F319; Dormir" />
+
+                    <Button x:Name="FreePlayButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#FFB3C7"
+                            Content="&#x2B50; Brincadeira livre" />
+
+                    <Button x:Name="OnlineGamesButton"
+                            Style="{StaticResource RoutineButtonStyle}"
+                            Background="#FFD0E2"
+                            Content="&#x1F3AE; Jogos online" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid x:Name="SchedulePanel"
+              Visibility="Collapsed">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock x:Name="ScheduleTitleText"
+                               Text="Hor&#x00E1;rios"
+                               Foreground="#352B34"
+                               FontSize="32"
+                               FontWeight="Bold" />
+
+                    <TextBlock x:Name="ScheduleHelpText"
+                               Text="Marque a tarefa e escreva o hor&#x00E1;rio no formato 07:30."
+                               Margin="0,8,0,16"
+                               Foreground="#6B5864"
+                               FontSize="18"
+                               TextWrapping="Wrap" />
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="BrushTeethScheduleCheckBox" Content="Escovar os dentes" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="BrushTeethScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="07:00" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="SchoolScheduleCheckBox" Content="Ir para escola" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="SchoolScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="07:30" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="CleanRoomScheduleCheckBox" Content="Arrumar quarto" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="CleanRoomScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="17:00" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="HomeworkScheduleCheckBox" Content="Dever de casa" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="HomeworkScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="16:00" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="ReadingScheduleCheckBox" Content="Leitura" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="ReadingScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="19:30" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="SleepScheduleCheckBox" Content="Dormir" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="SleepScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="20:30" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="FreePlayScheduleCheckBox" Content="Brincadeira livre" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="FreePlayScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="15:00" />
+                    </Grid>
+
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="OnlineGamesScheduleCheckBox" Content="Jogos online" FontSize="18" VerticalAlignment="Center" />
+                        <TextBox x:Name="OnlineGamesScheduleTextBox" Grid.Column="1" Style="{StaticResource TimeTextBoxStyle}" Text="18:00" />
+                    </Grid>
+
+                    <Border x:Name="AlarmSoundBadge"
+                            Margin="0,18,0,8"
+                            Padding="14"
+                            Background="White"
+                            BorderBrush="#F9A8D4"
+                            BorderThickness="2"
+                            CornerRadius="18">
+                        <StackPanel>
+                            <TextBlock x:Name="AlarmSoundLabelText"
+                                       Text="Som do alarme"
+                                       Foreground="#352B34"
+                                       FontSize="20"
+                                       FontWeight="SemiBold" />
+
+                            <Grid Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <ComboBox x:Name="AlarmSoundComboBox"
+                                          Height="42"
+                                          FontSize="18"
+                                          SelectedValuePath="Tag">
+                                    <ComboBoxItem Tag="soft" Content="Suave" />
+                                    <ComboBoxItem Tag="classic" Content="Cl&#x00E1;ssico" />
+                                    <ComboBoxItem Tag="digital" Content="Digital" />
+                                    <ComboBoxItem Tag="rising" Content="Crescente" />
+                                </ComboBox>
+
+                                <Button x:Name="TestAlarmButton"
+                                        Grid.Column="1"
+                                        Width="104"
+                                        Margin="10,0,0,0"
+                                        Style="{StaticResource ThemeButtonStyle}"
+                                        Content="Testar" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <TextBlock x:Name="ScheduleStatusText"
+                               Margin="0,14,0,6"
+                               MinHeight="28"
+                               Foreground="#6B5864"
+                               FontSize="18"
+                               TextWrapping="Wrap" />
+
+                    <Button x:Name="SaveScheduleButton"
+                            Style="{StaticResource ActionButtonStyle}"
+                            Content="Salvar hor&#x00E1;rios" />
+
+                    <Button x:Name="CloseScheduleButton"
+                            Margin="0,12,0,0"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Content="Voltar" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <Grid x:Name="TimerPanel"
+              Visibility="Collapsed">
+            <Grid>
+                <Button x:Name="TimerThemeButton"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Style="{StaticResource ThemeButtonStyle}"
+                        Content="Modo azul" />
+
+                <StackPanel VerticalAlignment="Center">
+                    <TextBlock x:Name="TimerActivityText"
+                               TextAlignment="Center"
+                               Foreground="#352B34"
+                               FontSize="31"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap" />
+
+                    <TextBlock x:Name="TimerText"
+                               Margin="0,38,0,0"
+                               TextAlignment="Center"
+                               Foreground="#352B34"
+                               FontSize="68"
+                               FontWeight="Bold" />
+
+                    <ProgressBar x:Name="TimerProgress"
+                                 Margin="0,26,0,0"
+                                 Height="24"
+                                 Minimum="0"
+                                 Maximum="100"
+                                 Background="#FDE2F0"
+                                 Foreground="#F472B6" />
+
+                    <TextBlock x:Name="FeedbackText"
+                               Margin="0,30,0,0"
+                               MinHeight="72"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               Foreground="#6B5864"
+                               FontSize="22" />
+
+                    <Button x:Name="StartTimerButton"
+                            Margin="0,20,0,0"
+                            Style="{StaticResource ActionButtonStyle}"
+                            Content="Come&#x00E7;ar timer" />
+
+                    <Button x:Name="PauseButton"
+                            Margin="0,12,0,0"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Content="Pausar" />
+
+                    <Button x:Name="BackButton"
+                            Margin="0,12,0,0"
+                            Style="{StaticResource SecondaryButtonStyle}"
+                            Content="Voltar" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

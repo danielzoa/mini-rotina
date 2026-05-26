@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>MiniRotina</AssemblyName>
+    <RootNamespace>TimerInfantilWindows</RootNamespace>
+    <ApplicationIcon>Assets\MiniRotina.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\MiniRotina.ico" />
+  </ItemGroup>
+
+</Project>

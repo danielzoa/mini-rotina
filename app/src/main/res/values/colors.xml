@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_soft">#F2FAF8</color>
+    <color name="text_primary">#24333A</color>
+    <color name="text_secondary">#52646C</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="activity_mint">#8BD8C7</color>
+    <color name="activity_blue">#8FC7F7</color>
+    <color name="activity_yellow">#F7D77E</color>
+    <color name="activity_lilac">#C7B7F2</color>
+    <color name="activity_green">#A8D98B</color>
+    <color name="activity_night">#8FA3C7</color>
+    <color name="activity_pink">#F5A8B8</color>
+
+    <color name="button_primary">#FFB95F</color>
+    <color name="button_secondary">#D7EEF5</color>
+    <color name="progress_background">#D7EEF5</color>
+    <color name="progress_fill">#FFB95F</color>
+</resources>
